@@ -19,7 +19,8 @@ requirements:
     - pysam
     - matplotlib
     - seaborn
-    - libgcc  # [linux]
+    - gcc  # [linux]
+    - llvm  # [osx]
   build:
     - python
     - cutadapt
@@ -27,8 +28,7 @@ requirements:
     - pysam
     - matplotlib
     - seaborn
-    - gcc  # [linux]
-    - llvm  # [osx]
+    - libgcc  # [linux]
 
 test:
   imports:
@@ -39,4 +39,4 @@ test:
 build:
   skip: True  # [py27]
   script: python3 setup.py install
-  number: 0
+  number: 1
